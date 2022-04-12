@@ -75,6 +75,7 @@ This project is set up to run using [Docker Compose](https://docs.docker.com/com
    ```sh
    $ docker-compose exec web python3 manage.py makemigrations
    $ docker-compose exec web python3 manage.py migrate
+   $ docker-compose exec web python manage.py loaddata ./fixtures/001_plans.json
    ```
 1. Create a superuser if required:
    ```sh

@@ -11,11 +11,11 @@ class Plans(models.Model):
         max_digits=30,
         decimal_places=2,
     )
-    is_active = models.BooleanField()
     description = models.TextField(
         null=True,
         blank=True,
     )
+    is_active = models.BooleanField()
     created_at = models.DateTimeField(
         auto_now_add=True,
         null=True,
@@ -26,6 +26,9 @@ class Plans(models.Model):
         null=True,
         blank=True,
     )
+
+    def __str__(self):
+        return self.name
 
 
 # Create your models here.

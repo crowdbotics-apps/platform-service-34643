@@ -238,8 +238,11 @@ if USE_S3:
     DEFAULT_FILE_STORAGE = env.str(
         "DEFAULT_FILE_STORAGE", "home.storage_backends.MediaStorage"
     )
-    MEDIA_URL = "/mediafiles/"
-    MEDIA_ROOT = os.path.join(BASE_DIR, "mediafiles")
+    MEDIA_URL = "/assets/media/files/"
+    MEDIA_ROOT = os.path.join(BASE_DIR, "assets/media/files")
+else:
+    MEDIA_URL = "/assets/media/files/"
+    MEDIA_ROOT = os.path.join(BASE_DIR, "assets/media/files")
 
 # Swagger settings for api docs
 SWAGGER_SETTINGS = {
