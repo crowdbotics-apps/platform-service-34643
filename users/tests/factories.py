@@ -7,9 +7,13 @@ from factory.django import DjangoModelFactory
 
 class UserFactory(DjangoModelFactory):
 
-    username = Faker("user_name")
+    first_name = Faker('first_name')
+    last_name = Faker('last_name')
+    username = "{first_name}.{last_name}".format(first_name=first_name, last_name=last_name)
     email = Faker("email")
     name = Faker("name")
+    is_active = True
+    is_staff = False
 
     @post_generation
     def password(self, create: bool, extracted: Sequence[Any], **kwargs):
